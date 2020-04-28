@@ -1,0 +1,23 @@
+#HTTPS Properties
+
+https:
+  host: "0.0.0.0"
+  port: "8082"
+  protocol: "HTTPS"
+  tlsContext: "apiTlsContext"
+  
+tls.keystore:
+  type: "pkcs12"
+  path: "certs/check-in-papi-dev.p12"
+  alias: "server"
+  password: "mule12345"
+  keyPassword: "mule12345"
+
+api:
+  groupId: "8918a338-2832-4237-b9bd-73e8abcf3309"
+  artifactId: "check-in-papi"
+  version: "1.0.1"
+  spec: "resource::${api.groupId}:${api.artifactId}:${api.version}:raml:zip:api.raml"
+  majorVersion: "v1"
+  id: "16123622" 
+  
