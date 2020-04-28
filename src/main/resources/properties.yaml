@@ -14,9 +14,9 @@ tls.keystore:
   keyPassword: "mule12345"
 
 api:
-  groupId: "8918a338-2832-4237-b9bd-73e8abcf3309"
-  artifactId: "check-in-papi"
-  version: "1.0.1"
+  groupId: "${api.groupId}"
+  artifactId: "${api.artifactId}"
+  version: "${api.version}"
   spec: "resource::${api.groupId}:${api.artifactId}:${api.version}:raml:zip:api.raml"
   majorVersion: "v1"
   id: "16123622" 
