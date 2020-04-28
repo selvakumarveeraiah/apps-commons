@@ -1,0 +1,17 @@
+#Properties use in development environment
+
+tls.keystore:
+  type: "pkcs12"
+  path: "certs/check-in-papi-prod.p12"
+  alias: "server"
+  password: "mule12345"
+  keyPassword: "mule12345"
+
+  
+  
+api:
+  id: "16126146" 
+  
+logger:
+  prettyPrint: "false"
+  disabled.fields: "content"

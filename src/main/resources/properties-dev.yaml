@@ -1,0 +1,16 @@
+#Properties use in development environment
+
+tls.keystore:
+  type: "pkcs12"
+  path: "certs/check-in-papi-dev.p12"
+  alias: "server"
+
+
+  
+  
+api:
+  id: "16123622" 
+  
+logger:
+  prettyPrint: "true"
+  disabled.fields: "null"

@@ -6,12 +6,6 @@ https:
   protocol: "HTTPS"
   tlsContext: "apiTlsContext"
   
-tls.keystore:
-  type: "pkcs12"
-  path: "certs/check-in-papi-dev.p12"
-  alias: "server"
-  password: "mule12345"
-  keyPassword: "mule12345"
 
 api:
   groupId: "${api.groupId}"
@@ -19,5 +13,4 @@ api:
   version: "${api.version}"
   spec: "resource::${api.groupId}:${api.artifactId}:${api.version}:raml:zip:api.raml"
   majorVersion: "v1"
-  id: "16123622" 
-  
+ 
