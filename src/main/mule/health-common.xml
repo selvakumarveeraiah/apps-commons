@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd">
+	
+	<flow name="api-alive" doc:id="b139112c-3494-4ef4-9df4-508cc86190c5" >
+		<http:listener doc:name="GET /alive" doc:id="0bd52980-0fe7-478b-a4f7-61904538e2a6" config-ref="apiHttpListenerConfig" path="/alive" allowedMethods="GET">
+			<http:error-response statusCode="503" reasonPhrase="Service Not Available">
+				<http:body ><![CDATA[DOWN]]></http:body>
+			</http:error-response>
+		</http:listener>
+		<set-payload value="UP" doc:name="Set Payload" doc:id="97b14702-7296-42b3-a395-66146414c9d1" />
+	</flow>
+	
+	
+	
+	<flow name="api-ready" doc:id="febe0c5f-4174-4762-aadc-a1be72453f3e" >
+		<http:listener doc:name="GET /ready" doc:id="bedec5e1-3f74-4520-963a-e4db3d060e31" config-ref="apiHttpListenerConfig" path="/ready" allowedMethods="GET">
+			<http:error-response statusCode="503" reasonPhrase="Service Not Available">
+				<http:body ><![CDATA[DOWN]]></http:body>
+			</http:error-response>
+		</http:listener>
+		<flow-ref doc:name='CheckallDependecyrAlive' doc:id="14c27afd-2ff8-4dba-86ee-6a12a50a2506" name="CheckallDependecyrAlive"/>
+	</flow>
+	
+	
+</mule>

@@ -21,14 +21,6 @@
 
 
 
-	<properties>
-		<deployment.env>will be set from command-line with -Ddeployment.env=...</deployment.env>
-		<deployment.prefix>selva-</deployment.prefix>
-		<deployment.suffix>-${deployment.env}</deployment.suffix>
-		<deployment.name>${deployment.prefix}${project.artifactId}${deployment.suffix}</deployment.name>
-		<ap.environment>${deployment.env}</ap.environment>
-	</properties>
-
 
 
 
@@ -74,6 +66,14 @@
 								<anypoint.platform.client_secret>${ap.client_secret}</anypoint.platform.client_secret>
 								<encrypt.key>${encrypt.key}</encrypt.key>
 								<env>${ap.environment}</env>
+								
+
+
+
+<anypoint.platform.config.analytics.agent.enabled>true</anypoint.platform.config.analytics.agent.enabled>
+<anypoint.platform.visualizer.displayName>${project.artifactId}</anypoint.platform.visualizer.displayName>
+<anypoint.platform.visualizer.layer>${api.layer}</anypoint.platform.visualizer.layer>  
+
 							</properties>
 						</cloudHubDeployment>
 					</configuration>

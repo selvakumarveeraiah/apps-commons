@@ -3,27 +3,21 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.mulesoft.training.anyairline</groupId>
-	<artifactId>check-in-papi</artifactId>
+	<artifactId>apps-commons</artifactId>
 	<version>1.0.0-SNAPSHOT</version>
 	<packaging>mule-application</packaging>
 
-	<name>check-in-papi</name>
+	<name>app-commons</name>
 	
 	<parent>
 	<groupId>com.mulesoft.training.anyairline</groupId>
 	<artifactId>parent-pom</artifactId>
 		<version>1.0.0-SNAPSHOT</version>
-		<relativePath>./parent-pom.xml</relativePath>
+		<relativePath>../parent-pom.xml</relativePath>
 	</parent>
 
-	<properties>
+	
 
-		<!--   Check-in-Papi Properties -->
-		<api.groupId>8918a338-2832-4237-b9bd-73e8abcf3309</api.groupId>
-		<api.artifactId>check-in-papi</api.artifactId>
-		<api.version>1.0.1</api.version>
-
-	</properties>
 
 	<build>
 
@@ -32,7 +26,9 @@
 			<plugin>
 				<groupId>org.mule.tools.maven</groupId>
 				<artifactId>mule-maven-plugin</artifactId>
-		
+				<configuration>
+				 	<classifier>mule-plugin</classifier>
+				</configuration>
 			</plugin>
 
 
@@ -49,34 +45,6 @@
 			<classifier>mule-plugin</classifier>
 		</dependency>
 
-		<dependency>
-			<groupId>org.mule.modules</groupId>
-			<artifactId>mule-apikit-module</artifactId>
-		
-			<classifier>mule-plugin</classifier>
-		</dependency>
-        	 <!--    Check-in PAPI Connector  -->
-
-		<dependency>
-			<groupId>${api.groupId}</groupId>
-			<artifactId>${api.artifactId}</artifactId>
-			<version>${api.version}</version>
-			<classifier>raml</classifier>
-			<type>zip</type>
-		</dependency>
-		<dependency>
-            <groupId>com.mulesoft.modules</groupId>
-            <artifactId>mule-secure-configuration-property-module</artifactId>
-         
-            <classifier>mule-plugin</classifier>
-        </dependency>
-               <!-- JSON Logger -->
-			<dependency>
-				<groupId>${mssvc.ap.orgId}</groupId>
-				<artifactId>json-logger</artifactId>
-				<version>1.1.0-rc1</version>
-				<classifier>mule-plugin</classifier>
-			</dependency>
         
     </dependencies>
 
